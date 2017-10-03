@@ -25,6 +25,6 @@ public class IPValidationRegex {
 	}
 	
 	public static void testValidity(List<String> validIpArgs){
-		validIpArgs.forEach(ip -> System.out.println("IP address " + ip + " = " + Pattern.compile(RegularExpression).matcher(ip).matches()));
+		validIpArgs.stream().filter(ip -> Pattern.compile(RegularExpression).matcher(ip).matches()).forEach(System.out::println);
 	}
 }
